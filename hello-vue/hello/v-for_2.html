@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历二</title>
+</head>
+<body>
+<div id="xv2">
+    <ul>
+        <li v-for="(user,index) in users">
+            {{index+1}}--{{user.name}}--{{user.age}}
+        </li>
+    </ul>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+         var xv2=new Vue({
+            el:"#xv2",
+             data:{
+                users:[
+                    {name:"张三",age:4},
+                    {name:"何玲",age:45},
+                    {name:"鳖孙",age:58},
+                ]
+             }
+        })
+    </script>
+</div>
+</body>
+</html>
