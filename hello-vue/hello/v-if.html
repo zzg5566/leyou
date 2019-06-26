@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断</title>
+</head>
+<body>
+<div id="sv">
+    <button v-if="num===4" @click="add">点击添加</button>
+    <button v-else="num!==4" @click="decrement">点击减少</button>
+    <button v-show="num===100">我才显示</button>
+    现在的数字为:{{num}}
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:"#sv",
+        data:{
+            num:100
+        },
+        methods:{
+         add:function () {
+             this.num++
+         },
+          decrement:function () {
+              this.num--
+          }
+
+
+        }
+
+    })
+</script>
+</body>
+</html>

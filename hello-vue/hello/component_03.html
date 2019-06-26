@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子指向父组件</title>
+</head>
+<body>
+<div id="sv8">
+    <h1>{{num}}</h1>
+ <counter @increment="increment" @decrement="decrement"></counter>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component("counter",{
+        template:`<div>
+                    <button @click="increment">加</button>
+                    <button @click="decrement">减</button>
+                </div>`,
+            methods:{
+                   increment(){
+                       this.$emit("increment")
+                   },
+                decrement(){
+                       this.$emit("decrement")
+                }
+            }
+    })
+    new Vue({
+        el:"#sv8",
+        data:{
+            num:0
+        },
+        methods:{
+            increment(){
+                this.num++
+            },
+            decrement(){
+                this.num--
+            }
+        }
+    })
+</script>
+</body>
+</html>

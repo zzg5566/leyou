@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件</title>
+</head>
+<body>
+<div id="sv5">
+<count></count>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component("count",
+        {template:'<button @click="num++">点击第{{num}}下</button>',
+        data:function () {
+            return{
+                num:0
+            }
+        }}
+        )
+    new Vue({
+        el:"#sv5"
+    })
+</script>
+</body>
+</html>
