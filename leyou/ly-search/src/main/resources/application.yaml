@@ -1,0 +1,35 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.241.128:9300
+  rabbitmq:
+      host: 192.168.241.128
+      username: gzz5566
+      password: 1234
+      virtual-host: /leyou
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 5
+
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+ly:
+  encoder:
+    crypt:
+      secret: ${random.uuid} # 随机的密钥，使用uuid
+      strength: 10 # 加密强度4~31，决定了密码和盐加密时的运算次数，超过10以后加密耗时会显著增加
+  jwt:
+    pubKeyPath: D:/heima/rsa/id_rsa.pub # 公钥地址
+    app:
+      id: 4 # 服务id
+      secret: ${spring.application.name} # 服务密钥，默认是服务的名称
+      headerName: privilege_token

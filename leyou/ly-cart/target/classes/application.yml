@@ -1,0 +1,22 @@
+server:
+  port: 8088
+spring:
+  redis:
+    host: 192.168.241.128
+  application:
+    name: cart-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+ly:
+  jwt:
+     pubKeyPath: D:/heima/rsa/id_rsa.pub # 公钥地址
+     user:
+       cookieName: LY_TOKEN
+logging:
+  level:
+     com.leyou: debug # cookie名称
